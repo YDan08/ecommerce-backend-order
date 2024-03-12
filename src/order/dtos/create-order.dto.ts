@@ -15,6 +15,10 @@ export class ProductOrderDto {
 
 @InputType()
 export class CreateOrderDto {
+	@IsString()
+	@Field(() => String)
+	email: string
+
 	@Field(() => [ProductOrderDto], { defaultValue: [] })
 	@IsArray()
 	@Type(() => ProductOrderDto)

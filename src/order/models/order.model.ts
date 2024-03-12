@@ -11,6 +11,9 @@ export class ProductOrder {
 
 @ObjectType()
 export class OrderModel {
+	@Field(() => String)
+	email: string
+
 	@Field(() => [ProductOrder])
 	products: ProductOrder[]
 }

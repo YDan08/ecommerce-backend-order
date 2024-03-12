@@ -6,6 +6,7 @@ export interface ProductOrder {
 }
 
 interface Order {
+	email: string
 	products: ProductOrder[]
 }
 
@@ -18,6 +19,10 @@ export const productOrderSchema = new Schema<ProductOrder>({
 
 export const orderSchema = new Schema<Order>(
 	{
+		email: {
+			type: String,
+			required: true,
+		},
 		products: {
 			type: [productOrderSchema],
 			required: true,
